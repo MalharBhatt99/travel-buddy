@@ -1,0 +1,922 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+      #header {
+        width: 100%;
+        height: 70px;
+        background-color: white;
+        box-shadow:
+          rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+          rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0%;
+        z-index: 10;
+      }
+      header {
+        width: 70%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      header aside {
+        width: 17%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      header aside span {
+        font-size: 25px;
+        font-weight: bold;
+      }
+      header aside span:nth-child(1) {
+        color: #0077b6;
+      }
+      header aside span:nth-child(2) {
+        color: #e06f00;
+      }
+      header nav {
+        width: 60%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 8px;
+      }
+      header nav ul {
+        width: 85%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+      header nav ul li {
+        list-style: none;
+        position: relative;
+      }
+      header nav ul li a {
+        text-decoration: none;
+        color: #434343;
+        font-weight: 600;
+        font-size: 16px;
+      }
+      header nav button {
+        width: 20%;
+        padding: 8px 20px;
+        border: 0px;
+        background-color: #e06f00;
+        color: white;
+        border-radius: 20px;
+        font-size: 16px;
+      }
+      header nav button:hover {
+        color: #0077b6;
+      }
+      header nav ul li :hover {
+        color: #0077b6;
+      }
+      header nav ul li :hover::before {
+        content: "";
+        height: 10%;
+        width: 100%;
+        background-color: #e06f00;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        animation: underline 0.5s ease;
+      }
+      @keyframes underline {
+        from {
+          width: 0%;
+        }
+        to {
+          width: 100%;
+        }
+      }
+      /* banner part start */
+      #banner {
+        /* border: 1px solid; */
+        width: 100%;
+        height: 95vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #ebf8ff;
+      }
+      #banner > main {
+        /* border: 1px solid; */
+        height: 340px;
+        width: 1100px;
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+      }
+      #banner > main > aside {
+        height: 100%;
+        width: 50%;
+        /* border: 1px solid; */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+      }
+      #banner > main > img {
+        height: 333px;
+        width: 520px;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+      }
+      #banner > main > aside > span {
+        background-color: #fff3e0;
+        color: #f77f00;
+        width: 300px;
+        margin-top: 20px;
+        height: 33px;
+        text-align: center;
+        line-height: 33px;
+        border: 1px solid #f77f00;
+        border-radius: 20px;
+      }
+
+      #sear {
+        width: 440px;
+        height: 50px;
+        border-radius: 50px;
+        background-color: white;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+      #sear > input {
+        width: 304px;
+        outline: none;
+        border: none;
+        height: 100%;
+        border-radius: 50px;
+        margin-left: 15px;
+      }
+      #sear > button {
+        height: 42px;
+        font-size: 14px;
+        font-weight: 600;
+        width: 112px;
+        background-color: #ee7802;
+
+        border-radius: 30px;
+        color: white;
+        border: none;
+      }
+      #sear > button:hover {
+        background-color: #b76412;
+      }
+
+      /* banner part end */
+
+      #top_picks {
+        width: 100%;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+      }
+      #destination {
+        width: 100%;
+        height: 575px;
+        display: flex;
+        justify-content: center;
+        align-items: start;
+      }
+      #desti {
+        height: 478px;
+        width: 80%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        margin: 20px 0px;
+      }
+      .dest {
+        width: 350px;
+        height: 220px;
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+        transition: all 0.3s ease-in-out;
+      }
+      .destimg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 10px;
+        transition: all 0.4s ease;
+      }
+      .destcon {
+        position: absolute; /* Put text over image */
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+
+        justify-content: space-between;
+        z-index: 2;
+      }
+      .destb {
+        height: 26px;
+        width: 78px;
+        font-size: 12px;
+        margin-top: 10px;
+        margin-right: 15px;
+        align-self: flex-end;
+        padding: 2px 5px;
+        border-radius: 20px;
+        text-align: center;
+        background-color: #f77f00;
+        color: white;
+        font-weight: 600;
+      }
+      .destp {
+        align-self: flex-start;
+        margin-left: 10px;
+        color: white;
+      }
+      .dest:hover {
+        transform: translateY(-5px);
+      }
+      .dest:hover .destimg {
+        transform: scale(1.1);
+      }
+
+      /* destination end */
+
+      #step {
+        height: 500px;
+        width: 100%;
+        background-color: #f0f8ff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #top-step {
+        margin-top: 80px;
+        align-items: self-start;
+        height: 70px;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+      }
+      #bottom-step {
+        margin-top: 30px;
+        height: 240px;
+        width: 80%;
+      }
+      .sbox {
+        display: flex;
+        justify-content: space-evenly;
+      }
+      .stbox {
+        height: 230px;
+        width: 250px;
+        border: 2px solid #58a8d5;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        border-radius: 10px;
+        gap: 10px;
+      }
+      .number {
+        margin-top: 30px;
+        height: 48px;
+        width: 48px;
+        border-radius: 50%;
+        font-weight: 700;
+        font-size: 20px;
+        background-color: #0077b6;
+        color: white;
+        line-height: 48px;
+        text-align: center;
+      }
+      .stbox > h3 {
+        color: #023e8a;
+      }
+      .stbox > p {
+        font-size: 13px;
+        color: #666666;
+        text-align: center;
+        width: 80%;
+      }
+      /* step ends */
+
+      /* package start */
+      #package {
+        height: 630px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+      }
+      #top-package {
+        margin-top: 80px;
+        height: 70px;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+      }
+      #bottom-package {
+        height: 370px;
+        width: 80%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+      #tp1 > div {
+        background-image: url(https://nicetourbali.com/wp-content/uploads/2018/06/Lempuyang-Temple.jpg);
+      }
+      #tp2 > div {
+        background-image: url(https://pmlholidays.com/admin/production/images/blogs/Europe.jpg);
+      }
+      #tp3 > div {
+        background-image: url(https://www.travelcenter.uk/blog/wp-content/uploads/2018/02/Palolem-Beach-India.jpg);
+      }
+
+      .tp > div {
+        height: 160px;
+        width: 300px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 10px;
+        margin-left: 10px;
+      }
+      .tp > h3 {
+        width: 85%;
+        color: #023e8a;
+      }
+      .tp > p {
+        color: #666666;
+        width: 86%;
+      }
+      .tp > span {
+        color: #0077b6;
+        width: 85%;
+        display: flex;
+        justify-content: space-between;
+      }
+      .tp > span > button {
+        height: 37px;
+        width: 103px;
+        font-size: 14px;
+        font-weight: 600;
+        background-color: #0077b6;
+        color: white;
+        border-radius: 10px;
+        border: none;
+      }
+      .tp > span > button:hover {
+        background-color: #023e8a;
+      }
+      .tp:hover {
+        transition: all 0.15s linear;
+        transform: translateY(-10px);
+      }
+
+      .tp {
+        height: 357px;
+        width: 350px;
+        border: 2px solid #bad9ec;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        border-radius: 10px;
+      }
+      /* packeges end */
+      #review {
+        width: 100%;
+        height: 492px;
+        background-color: #0077b6;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #top-review {
+        margin-top: 80px;
+        height: 70px;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+      }
+      #bottom-review {
+        margin-top: 30px;
+        height: 240px;
+        width: 80%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+      .re {
+        height: 221px;
+        width: 350px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding-left: 10px;
+        background-color: #1a85bd;
+        border-radius: 10px;
+      }
+      .re > div {
+        height: 45px;
+        width: 80%;
+      }
+      .re > p {
+        width: 95%;
+        font-size: 14px;
+        color: white;
+      }
+      .user {
+        width: 95%;
+        height: 46px;
+        display: flex;
+        gap: 7px;
+      }
+      .user > span {
+        height: 44px;
+        width: 44px;
+        border-radius: 50%;
+        border: 1px solid #90e0ef;
+        background-image: url(https://picsum.photos/50/50?random=121);
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-size: cover;
+      }
+      .user > div h4 {
+        color: rgb(255, 255, 255);
+      }
+      .user > div p {
+        color: rgb(148, 144, 144);
+      }
+      .re:hover {
+        background-color: #4395c1;
+      }
+      /* review end */
+
+      #feedback {
+        height: 300px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        background-color: #e06f00;
+      }
+      #feedback > h2 {
+        color: white;
+      }
+      #feedback > p {
+        color: white;
+      }
+
+      #sub {
+        width: 440px;
+        height: 50px;
+        border-radius: 50px;
+        background-color: white;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+      #sub > input {
+        width: 304px;
+        outline: none;
+        border: none;
+        height: 100%;
+        border-radius: 50px;
+        margin-left: 15px;
+      }
+      #sub > button {
+        height: 42px;
+        font-size: 14px;
+        font-weight: 600;
+        width: 112px;
+        background-color: #0077b6;
+        border-radius: 30px;
+        color: white;
+        border: none;
+      }
+      #sub > button:hover {
+        background-color: #023e8a;
+      }
+      /* feedback end */
+      footer {
+        height: 320px;
+        width: 100%;
+        background-color: #023e8a;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+      }
+      #footer-top {
+        margin-top: 20px;
+        width: 80%;
+        height: 174px;
+        display: flex;
+        justify-content: space-evenly;
+      }
+      #foot1 {
+        width: 29%;
+        height: 100%;
+        margin-bottom: 20px;
+      }
+      #foot1 > p {
+        margin-top: 10px;
+        text-align: left;
+        font-size: 13px;
+        color: #8ab4d6;
+        line-height: 23px;
+      }
+      #foot1 aside span {
+        font-size: 25px;
+        font-weight: bold;
+      }
+      #foot1 aside span:nth-child(1) {
+        color: #0077b6;
+      }
+      #foot1 aside span:nth-child(2) {
+        color: #e06f00;
+      }
+      .foot {
+        height: 174px;
+        width: 199px;
+      }
+      .foot > h4 {
+        color: white;
+        margin-bottom: 10px;
+      }
+      .foot > ul {
+        height: 75%;
+        list-style: none;
+        color: #8ab4d6;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+      }
+      #footer-bottom {
+        height: 41px;
+        width: 70%;
+        border-top: 1px solid #0a4f7a;
+      }
+      #footer-bottom > p {
+        color: #6a9ab6;
+        text-align: center;
+        font-size: 13px;
+        line-height: 45px;
+      }
+    </style>
+  </head>
+  <body>
+    <section id="header">
+      <header>
+        <aside><span>Travel</span><span>Buddy</span></aside>
+        <nav>
+          <ul>
+            <li>
+              <a href="#banner">Home</a>
+              <div></div>
+            </li>
+            <li><a href="#top_picks">Destinations </a></li>
+            <li><a href="#package">Packages</a></li>
+            <li><a href="#step">How It Works</a></li>
+          </ul>
+          <button>Book Now</button>
+        </nav>
+      </header>
+    </section>
+    <section id="banner">
+      <main>
+        <aside>
+          <span>✈️ 500+ Destinations Worldwide </span>
+          <h1 style="color: #f77f00; font-size: 250%; font-weight: 700">
+            <span style="color: #023e8a">Travel the World <br />with</span>
+            TravelBuddy
+          </h1>
+          <p style="color: #666666">
+            Discover amazing destinations, book affordable travel packages, and
+            create lifelong memories. Your perfect trip starts here.
+          </p>
+          <div id="sear">
+            <input
+              type="text"
+              placeholder="Enter your E-mail Address"
+            /><button>Search</button>
+          </div>
+        </aside>
+        <img
+          src="https://images.pexels.com/photos/450441/pexels-photo-450441.jpeg"
+          alt=""
+        />
+      </main>
+    </section>
+    <section id="top_picks">
+      <p style="color: #f77f00">Top Picks</p>
+      <h1 style="color: #023e8a">Popular Destinations</h1>
+    </section>
+    <section id="destination">
+      <div id="desti">
+        <div class="dest" id="dest1">
+          <img
+            src="https://cdn.sanity.io/images/nxpteyfv/goguides/15486940194b45347ac5037248d2363d27dec5ad-1600x1066.jpg"
+            alt=""
+            class="destimg"
+          />
+          <span class="destcon"
+            ><p class="destb">Trending</p>
+            <span class="destp"
+              ><h3>Bali,Indonesia</h3>
+              <p>Beaches.Temples.Culture</p></span
+            >
+          </span>
+        </div>
+        <div class="dest" id="dest2">
+          <img
+            src="https://www.theparisreview.org/blog/wp-content/uploads/2018/01/eiffel-tower-paris-france-eiffel0217.jpg"
+            alt=""
+            class="destimg"
+          />
+          <span class="destcon"
+            ><p class="destb">Popular</p>
+            <span class="destp"
+              ><h3>Paris, France</h3>
+              <p>Eiffel Tower · Cuisine · Art</p></span
+            >
+          </span>
+        </div>
+        <div class="dest" id="dest3">
+          <img
+            src="https://www.thetravelmagazine.net/wp-content/uploads/Bodu.jpg"
+            alt=""
+            class="destimg"
+          />
+          <span class="destcon"
+            ><p class="destb">Luxury</p>
+            <span class="destp"
+              ><h3>Maldives</h3>
+              <p>Crystal Waters · Overwater Villas</p></span
+            >
+          </span>
+        </div>
+        <div class="dest" id="dest4">
+          <img
+            src="https://i.insider.com/5d264d1fb44ce765c0045293?width=1067&format=jpeg"
+            alt=""
+            class="destimg"
+          />
+          <span class="destcon"
+            ><p class="destb">New</p>
+            <span class="destp"
+              ><h3>Tokyo, Japan</h3>
+              <p>Tech · Food · Cherry Blossoms</p></span
+            >
+          </span>
+        </div>
+        <div class="dest" id="dest5">
+          <img
+            src="https://scontent.ccdn.cloud/image/vivitravels-en/9a82c5fe-0572-4ee0-8889-449105baf539/maxw-960.jpg"
+            alt=""
+            class="destimg"
+          />
+          <span class="destcon"
+            ><p class="destb">Budget</p>
+            <span class="destp"
+              ><h3>Goa, India</h3>
+              <p>Beaches · Nightlife · Food</p></span
+            >
+          </span>
+        </div>
+        <div class="dest" id="dest6">
+          <img
+            src="https://estatly.ae/wp-content/uploads/2024/04/img_0994.jpg.webp"
+            alt=""
+            class="destimg"
+          />
+          <span class="destcon"
+            ><p class="destb">Premium</p>
+            <span class="destp"
+              ><h3>Dubai, UAE</h3>
+              <p>Skyscrapers · Desert · Shopping</p></span
+            >
+          </span>
+        </div>
+      </div>
+    </section>
+    <section id="step">
+      <div id="top-step">
+        <p style="color: #f77f00">Simple Steps</p>
+        <h2 style="color: #023e8a">How TravelBuddy Works</h2>
+      </div>
+      <div id="bottom-step">
+        <div class="sbox">
+          <div class="stbox" id="stbox1">
+            <span class="number">1</span>
+            <h3>Choose Destination</h3>
+            <p>
+              Browse hundreds of handpicked destinations from around the world.
+            </p>
+          </div>
+          <div class="stbox" id="stbox2">
+            <span class="number">2</span>
+            <h3>Pick a Package</h3>
+            <p>
+              Select a travel package that fits your budget and travel style.
+            </p>
+          </div>
+          <div class="stbox" id="stbox3">
+            <span class="number">3</span>
+            <h3>Book Securely</h3>
+            <p>Book with confidence using our 100% secure payment system.</p>
+          </div>
+          <div class="stbox" id="stbox4">
+            <span class="number">4</span>
+            <h3>Enjoy Your Trip!</h3>
+            <p>Pack your bags and go. We handle all the details for you.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="package">
+      <div id="top-package">
+        <p style="color: #f77f00">Best Deals</p>
+        <h2 style="color: #023e8a">Travel Packages</h2>
+      </div>
+      <div id="bottom-package">
+        <div class="tp" id="tp1">
+          <div class="div"></div>
+          <h3>Bali Getaway – 5 Days</h3>
+          <p>
+            Flight + Hotel + Sightseeing included. Perfect for couples and
+            families.
+          </p>
+          <span
+            ><h2>₹35,000</h2>
+            <button>Book Now</button></span
+          >
+        </div>
+        <div class="tp" id="tp2">
+          <div class="div"></div>
+          <h3>Europe Tour – 10 Days</h3>
+          <p>
+            Visit 5 countries across Europe with guided tours and luxury stays.
+          </p>
+          <span
+            ><h2>₹1,20,000</h2>
+            <button>Book Now</button></span
+          >
+        </div>
+        <div class="tp" id="tp3">
+          <div class="div"></div>
+          <h3>Goa Weekend – 3 Days</h3>
+          <p>Quick beach escape with resort stay, meals, and water sports.</p>
+          <span
+            ><h2>₹12,000</h2>
+            <button>Book Now</button></span
+          >
+        </div>
+      </div>
+    </section>
+    <section id="review">
+      <div id="top-review">
+        <p style="color: #90e0ef">Happy Travelers</p>
+        <h2 style="color: white">What They Say About Us</h2>
+      </div>
+      <div id="bottom-review">
+        <div class="re" id="re1">
+          <h3 style="color: yellow">★ ★ ★ ★ ★</h3>
+          <p>
+            "TravelBuddy made our honeymoon absolutely magical! The Bali package
+            was perfect — every detail was handled."
+          </p>
+          <div class="user">
+            <span></span>
+            <div>
+              <h4>Rohan & Priya</h4>
+              <p>Bali, Indonesia</p>
+            </div>
+          </div>
+        </div>
+        <div class="re" id="re2">
+          <h3 style="color: yellow">★ ★ ★ ★ ★</h3>
+          <p>
+            "Best travel service I've used! Booked a Europe tour and everything
+            went smoothly. Will definitely book again."
+          </p>
+          <div class="user">
+            <span></span>
+            <div>
+              <h4>Anjali Mehta</h4>
+              <p>Europe Tour</p>
+            </div>
+          </div>
+        </div>
+        <div class="re" id="re3">
+          <h3 style="color: yellow">★ ★ ★ ★ ★</h3>
+          <p>
+            "Affordable, reliable, and super easy to book. The Goa weekend
+            package was exactly what our family needed!"
+          </p>
+          <div class="user">
+            <span></span>
+            <div>
+              <h4>Karan Shah</h4>
+              <p>Goa, India</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="feedback">
+      <h2>Get the Best Travel Deals!</h2>
+      <p>
+        Subscribe and receive exclusive offers, destination guides, and travel
+        tips.
+      </p>
+      <div id="sub">
+        <input type="text" placeholder="Enter your E-mail Address" /><button>
+          Subcribe
+        </button>
+      </div>
+    </section>
+    <footer>
+      <section id="footer-top">
+        <div id="foot1">
+          <aside><span>Travel</span><span>Buddy</span></aside>
+          <p>
+            We help you explore the world with ease. 500+ destinations,
+            affordable packages, and 24/7 support.
+          </p>
+        </div>
+        <div class="foot" id="foot2">
+          <h4>Destinations</h4>
+          <ul>
+            <li>Bali</li>
+            <li>Paris</li>
+            <li>Dubai</li>
+            <li>Maldives</li>
+          </ul>
+        </div>
+        <div class="foot" id="foot3">
+          <h4>Company</h4>
+          <ul>
+            <li>About US</li>
+            <li>Blog</li>
+            <li>Careers</li>
+            <li>Contact</li>
+          </ul>
+        </div>
+        <div class="foot" id="foot4">
+          <h4>Support</h4>
+          <ul>
+            <li>FAQs</li>
+            <li>Cancellation</li>
+            <li>Privacy Policy</li>
+            <li>Terms</li>
+          </ul>
+        </div>
+      </section>
+      <section id="footer-bottom">
+        <p>© 2026 TravelBuddy. All rights reserved. ✈️</p>
+      </section>
+    </footer>
+  </body>
+</html>
